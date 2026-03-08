@@ -1,11 +1,19 @@
 # codex-pool
 
-Local-first orchestration for multi-account Codex CLI usage with:
+English | [简体中文](./README.zh-CN.md)
 
-- native `Sign in with ChatGPT` accounts
+Local-first account pooling and context handoff for Codex CLI, with native ChatGPT login and a quota-aware dashboard.
+
+## Overview
+
+`codex-pool` is a local-first toolchain for heavy Codex CLI usage across multiple ChatGPT accounts.
+
+It is being built around four core ideas:
+
+- native `Sign in with ChatGPT` account usage
 - workspace-level handoff and memory
-- half-automatic official quota snapshots
-- a local dashboard for account pool operations
+- quota-aware local operations
+- a local dashboard for account pool visibility and control
 
 ## Commands
 
@@ -16,7 +24,7 @@ pnpm --filter @codex-pool/dashboard dev
 pnpm --filter @codex-pool/dashboard build
 ```
 
-## Current Modules
+## Modules
 
 - `packages/shared`: runtime path and config helpers
 - `packages/core`: account repository, selector, handoff, quota parser, events
@@ -39,10 +47,14 @@ Recommended layout:
 
 ## Current Scope
 
-This repository currently provides the first working foundation:
+The repository currently provides the first working foundation:
 
 - tested core packages
 - a buildable dashboard shell
 - a minimal launcher shell
 
 The next milestone is wiring real runtime account state and browser-based quota refresh into the dashboard and launcher.
+
+## Acknowledgements
+
+Thanks to `openai@gpt-5.4` for design and implementation assistance.
