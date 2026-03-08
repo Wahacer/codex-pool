@@ -2,7 +2,13 @@
   "name": "codex-pool",
   "private": true,
   "packageManager": "pnpm@10.26.2",
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  },
   "scripts": {
-    "check:workspace": "pnpm -r exec node -e \"console.log('workspace-ok')\""
+    "check:workspace": "pnpm -r exec node -e \"console.log('workspace-ok')\"",
+    "test": "pnpm -r --if-present test"
   }
 }
