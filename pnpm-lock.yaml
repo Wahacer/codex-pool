@@ -18,10 +18,23 @@ importers:
         specifier: ^3.2.4
         version: 3.2.4(@types/node@24.12.0)(jsdom@26.1.0)
 
-  apps/cli: {}
+  apps/cli:
+    dependencies:
+      '@codex-pool/core':
+        specifier: workspace:*
+        version: link:../../packages/core
+      '@codex-pool/shared':
+        specifier: workspace:*
+        version: link:../../packages/shared
 
   apps/dashboard:
     dependencies:
+      '@codex-pool/core':
+        specifier: workspace:*
+        version: link:../../packages/core
+      '@codex-pool/shared':
+        specifier: workspace:*
+        version: link:../../packages/shared
       next:
         specifier: ^15.5.3
         version: 15.5.12(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -45,7 +58,11 @@ importers:
         specifier: ^26.1.0
         version: 26.1.0
 
-  packages/core: {}
+  packages/core:
+    dependencies:
+      '@codex-pool/shared':
+        specifier: workspace:*
+        version: link:../shared
 
   packages/shared: {}
 

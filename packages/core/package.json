@@ -3,6 +3,13 @@
   "private": true,
   "type": "module",
   "version": "0.0.0",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@codex-pool/shared": "workspace:*"
+  },
   "scripts": {
     "test": "vitest run"
   }

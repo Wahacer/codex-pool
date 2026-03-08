@@ -17,7 +17,7 @@ export function createAccountRepository(database: DatabaseSync) {
       status = excluded.status
   `);
 
-  const listStatement = database.prepare<AccountRecord[]>(
+  const listStatement = database.prepare(
     "SELECT id, label, status FROM accounts ORDER BY label ASC"
   );
 
@@ -26,7 +26,7 @@ export function createAccountRepository(database: DatabaseSync) {
       upsertStatement.run(account.id, account.label, account.status);
     },
     listAccounts() {
-      return listStatement.all() as AccountRecord[];
+      return listStatement.all() as unknown as AccountRecord[];
     },
   };
 }

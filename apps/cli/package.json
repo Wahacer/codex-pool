@@ -3,6 +3,10 @@
   "private": true,
   "type": "module",
   "version": "0.0.0",
+  "dependencies": {
+    "@codex-pool/core": "workspace:*",
+    "@codex-pool/shared": "workspace:*"
+  },
   "scripts": {
     "test": "vitest run"
   }

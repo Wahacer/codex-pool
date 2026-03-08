@@ -6,8 +6,8 @@ import { describe, expect, it } from "vitest";
 import Page from "./page";
 
 describe("dashboard page", () => {
-  it("renders account overview heading", () => {
-    render(<Page />);
+  it("renders account overview heading", async () => {
+    render(await Page());
     expect(screen.getByText("Codex Pool")).toBeInTheDocument();
   });
 });

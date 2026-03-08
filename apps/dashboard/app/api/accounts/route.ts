@@ -1,11 +1,9 @@
-const ACCOUNTS = [
-  {
-    id: "account-a",
-    label: "Account A",
-    status: "unknown",
-  },
-];
+import { loadAccountRegistry } from "@codex-pool/core";
+import { getAccountsRoot, getRuntimeRootFromEnv } from "@codex-pool/shared";
 
-export function GET() {
-  return Response.json({ accounts: ACCOUNTS });
+export async function GET() {
+  const runtimeRoot = getRuntimeRootFromEnv(process.env);
+  const accounts = await loadAccountRegistry(getAccountsRoot(runtimeRoot));
+
+  return Response.json({ accounts });
 }
