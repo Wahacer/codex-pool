@@ -1,3 +1,5 @@
+import React from "react";
+
 import { AccountTable } from "../components/account-table";
 
 const ACCOUNTS = [
