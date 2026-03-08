@@ -23,7 +23,7 @@ pnpm --filter @codex-pool/dashboard build
 
 ## Runtime Layout
 
-Create and use a runtime root outside the repo:
+Runtime state is created outside the repo under `~/.codex-pool`:
 
 ```text
 ~/.codex-pool/
@@ -33,18 +33,31 @@ Create and use a runtime root outside the repo:
 └── workspaces/
 ```
 
+## First Run
+
+1. Start the dashboard:
+
+```bash
+pnpm --filter @codex-pool/dashboard dev
+```
+
+2. Create one or more account entries from the dashboard.
+3. For each account, run `codex login` against the `CODEX_HOME` shown in the table.
+
+```bash
+CODEX_HOME=~/.codex-pool/accounts/work-a/home codex login
+```
+
+4. Keep disabled accounts out of rotation from the dashboard when needed.
+
 ## Current Status
 
 The repository currently includes:
 
-- shared runtime config helpers
+- runtime bootstrap and account manifest creation
 - SQLite-backed account repository
 - workspace memory and handoff builder
 - account selection logic
-- minimal native `codex` launcher wrapper
+- minimal native `codex` launcher wrapper with auto account selection
 - quota snapshot parser
-- local Next.js dashboard skeleton with API routes
-
-## Next Manual Step
-
-The next implementation step is to add a real account registry under `~/.codex-pool`, then wire the launcher and dashboard routes to that runtime state instead of placeholder data.
+- local Next.js dashboard with real account create and enable/disable operations

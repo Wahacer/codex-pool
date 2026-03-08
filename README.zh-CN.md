@@ -24,6 +24,14 @@ pnpm --filter @codex-pool/dashboard dev
 pnpm --filter @codex-pool/dashboard build
 ```
 
+## 快速开始
+
+1. 用 `pnpm --filter @codex-pool/dashboard dev` 启动本地 dashboard。
+2. 在页面里先创建账号条目。
+3. 复制表格里显示的 `CODEX_HOME` 路径。
+4. 对每个账号执行 `CODEX_HOME=/path/to/account/home codex login` 完成登录。
+5. 之后通过包装过的 launcher 启动 Codex，让它自动选择可用账号。
+
 ## 模块结构
 
 - `packages/shared`：运行时路径与配置辅助
@@ -47,13 +55,13 @@ pnpm --filter @codex-pool/dashboard build
 
 ## 当前进度
 
-当前仓库已经具备第一阶段可运行基础：
+当前仓库已经具备核心本地工作流：
 
-- 核心包已有测试覆盖
-- dashboard 骨架可构建
-- launcher 骨架可运行
+- 运行时初始化和账号 manifest 已有测试覆盖
+- dashboard 可以创建账号并切换 enable 或 disable 状态
+- launcher 可以自动选择第一个可用本地账号
 
-下一阶段会继续把真实账号池状态和基于浏览器 profile 的额度刷新接入 dashboard 与 launcher。
+下一阶段再继续接浏览器侧的官方配额快照，以及切号时的自动 handoff 注入。
 
 ## 致谢
 

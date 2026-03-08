@@ -24,6 +24,14 @@ pnpm --filter @codex-pool/dashboard dev
 pnpm --filter @codex-pool/dashboard build
 ```
 
+## Quick Start
+
+1. Start the local dashboard with `pnpm --filter @codex-pool/dashboard dev`.
+2. Create an account entry from the dashboard form.
+3. Copy the generated `CODEX_HOME` path shown in the table.
+4. Run `CODEX_HOME=/path/to/account/home codex login` for each account you want to enroll.
+5. Launch Codex through the wrapper so it auto-selects an enabled account.
+
 ## Modules
 
 - `packages/shared`: runtime path and config helpers
@@ -47,13 +55,13 @@ Recommended layout:
 
 ## Current Scope
 
-The repository currently provides the first working foundation:
+The repository currently provides the core local workflow:
 
-- tested core packages
-- a buildable dashboard shell
-- a minimal launcher shell
+- tested runtime bootstrap and account manifest management
+- a dashboard that can create accounts and toggle enable or disable state
+- a launcher that auto-selects the first enabled local account
 
-The next milestone is wiring real runtime account state and browser-based quota refresh into the dashboard and launcher.
+The next milestone is browser-based official quota snapshots and automatic handoff injection across account switches.
 
 ## Acknowledgements
 

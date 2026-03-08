@@ -3,6 +3,8 @@ export * from "./accounts/select-account";
 export * from "./events/repository";
 export * from "./quota/collector";
 export * from "./quota/parser";
+export * from "./runtime/account-manifest";
 export * from "./runtime/account-registry";
+export * from "./runtime/bootstrap";
 export * from "./workspaces/handoff";
 export * from "./workspaces/memory";
